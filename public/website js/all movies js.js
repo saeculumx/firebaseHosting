@@ -1,18 +1,18 @@
-var user=localStorage.getItem("username");
-var psw=localStorage.getItem("password");
+var user=sessionStorage.getItem("username");
+var psw=sessionStorage.getItem("password");
 
 
 $(document).ready(function(){
 	$(".error").css({"padding":"10px","color":"#f24144","font-size":"20px"});
 	if (typeof(Storage) !== "undefined") {
-	if(user!=""&&psw!="")
+	if(user==""||psw==""||user==null||psw==null)
 	   {
-	    $(".logout").css('display','block');
-		   $(".logReg").css('display','none');
+	    $(".logout").css('display','none');
+		   $(".logReg").css('display','block');
 	   }
 	   else{
-	   $(".logout").css('display','none');
-		   $(".logReg").css('display','block');
+		   $(".logout").css('display','block');
+		   $(".logReg").css('display','none');
 	   }
 	}
 	else{
@@ -104,8 +104,8 @@ $(document).ready(function(){
 				success: function(data){
 					if(data=="OK"){
 						$("#myLoginModal").modal('hide');
-						localStorage.setItem("username",username);
-						localStorage.setItem("password",password);
+						sessionStorage.setItem("username",username);
+						sessionStorage.setItem("password",password);
 						$(".logout").css('display','block');
 		         $(".logReg").css('display','none');
 						$(".error").text("");
@@ -164,14 +164,17 @@ $(document).ready(function(){
 $(document).ready(function(){
 	
 	 $(".logout").click(function(){
-		 localStorage.clear;
+		 console.log("click logout");
+		 sessionStorage.clear();
+		 $(".logout").css('display','none');
+		$(".logReg").css('display','block');
 	 });
 });
 
 $(document).ready(function(){
 	 $("#searchBtn").click(function(){
 		 var searchContent=$('#searchContent').val().trim();
-		 localStorage.setItem("searchContent",searchContent);
+		 sessionStorage.setItem("searchContent",searchContent);
 		 $('#searchContent').text("");
 		
 	 });

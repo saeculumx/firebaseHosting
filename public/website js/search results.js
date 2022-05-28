@@ -23,21 +23,20 @@ function getCookie(cname){
 var user=getCookie("username");
 var psw=getCookie("password");**/
 
-var user=localStorage.getItem("username");
-var psw=localStorage.getItem("password");
-
+var user=sessionStorage.getItem("username");
+var psw=sessionStorage.getItem("password");
 
 $(document).ready(function(){
 	$(".error").css({"padding":"10px","color":"#f24144","font-size":"20px"});
 	if (typeof(Storage) !== "undefined") {
-	if(user!=""&&psw!="")
+	if(user==""||psw==""||user==null||psw==null)
 	   {
-	    $(".logout").css('display','block');
-		   $(".logReg").css('display','none');
+	    $(".logout").css('display','none');
+		   $(".logReg").css('display','block');
 	   }
 	   else{
-	   $(".logout").css('display','none');
-		   $(".logReg").css('display','block');
+		   $(".logout").css('display','block');
+		   $(".logReg").css('display','none');
 	   }
 	}
 	else{
@@ -128,16 +127,15 @@ $(document).ready(function(){
 				},
 				success: function(data){
 					if(data=="OK"){
-						$("#myLoginModal").modal('hide');
-						localStorage.setItem("username",username);
-						localStorage.setItem("password",password);
-						$(".logout").css('display','block');
+					alert("LOGIN SUCCESSFULLY！");
+						sessionStorage.setItem("username",username);
+						sessionStorage.setItem("password",password);
+					$("#myLoginModal").modal('hide');
+					$(".logout").css('display','block');
 		         $(".logReg").css('display','none');
 						$(".error").text("");
 						$("#LoginPwd").text("");
 						$("#LoginUsername").text("");
-					alert("LOGIN SUCCESSFULLY！");
-					
 					}
 					else
 						{
@@ -189,15 +187,95 @@ $(document).ready(function(){
 $(document).ready(function(){
 	
 	 $(".logout").click(function(){
-		 localStorage.clear;
+		 console.log("click logout");
+		 sessionStorage.clear();
+		$(".logout").css('display','none');
+		$(".logReg").css('display','block');
 	 });
 });
 
+
 $(document).ready(function(){
+	var searchContentFromLastPage = sessionStorage.getItem("searchContent");
+	console.log(searchContentFromLastPage);
+	if(searchContentFromLastPage==""||searchContentFromLastPage==null)
+		{
+			 $('.searchResult').text("WHAT DO YOU WANT TO SEARCH ? ");
+		}
+	else{
+		
+		$('#searchContent').text(searchContentFromLastPage);
+		var searchContent=$('#searchContent').val().trim();
+		$.ajax({
+				url:'https://us-central1-sem-demo-mk0.cloudfunctions.net/function-key_word_search/moviesByKeyword',
+				type:'post',
+				data:{
+					Title:searchContent,
+					Limit:'[0,5]',
+				},
+			   dataType: 'json',
+				success: function(data){
+					console.log("search successfully!");
+	            	showResults(data);
+				},
+				error: function()
+				{
+					console.log("search failed");
+				}		
+			});
+	}
+	
+	
 	 $("#searchBtn").click(function(){
-		 var searchContent=$('#searchContent').val().trim();
-		 localStorage.setItem("searchContent",searchContent);
-		 $('#searchContent').text("");
+		 sessionStorage.removeItem("searchContent");
+		
+		
 		
 	 });
 });
+
+
+function showResults(Rdata){
+	var str = "";
+          for (var i = 0; i < Rdata.length; i++) { 
+			  $.ajax({
+				url:'https://api.themoviedb.org/3/search/movie?api_key=12aa6fa5f9d0e956ea2a1c6bf00f24c8&query='+Rdata[i].title,
+				type:'get',
+			   dataType: 'json',
+				success: function(Mdata){
+					console.log("search image successfully!");
+					console.log("search image successfully!!!!"+JSON.stringify(Mdata));
+					
+					var img = document.createElement("img");
+					var imgid = Mdata.backdrop_path;
+					if(imgid==null||imgid==""||typeof(imgid)== "undefined")
+						{
+							img.src = "img/moviePhoto.png";
+                           str = "<div><div>" + img+"</div><div>"+ Rdata[i].title+"</div></div>";
+						}
+					else{
+						img.src = "https://image.tmdb.org/t/p/w500/"+imgid;
+                           str = "<div><div>" + img +"</div><div>"+ Rdata[i].title+"</div></div>";
+						
+					}
+			  
+            
+              $(".searchResult").append(str);
+				},
+				error: function()
+				{
+					console.log("search image failed");
+				}		
+			});
+			  }
+			  
+			      
+};
+
+
+
+
+
+
+
+

@@ -16,8 +16,8 @@
 }
        
 .searchForm button {
-     height: 42px;
-     width: 42px;
+     height: 20px;
+    width: 20px;
      cursor: pointer;
      position: absolute;
 }
@@ -44,16 +44,13 @@ width: 400px;
 }
 
 .searchBar button {
-    background: none;
-	top:-2px;
-    right: 0px;
+    background: url("../img/search.png") no-repeat center;
+	background-size: contain;
+	top: 10px;
+    right: 8px;
 }
 
-.searchBar button:before{
-content: "\f002";
-font-family: FontAwesome;
-color: rgba(255,255,255,0.85);
-}
+
 
 
 /* login/register button */
@@ -66,7 +63,7 @@ color: rgba(255,255,255,0.85);
 .dropbtn{
 	height: 40px;
 	width: 40px;
-	background: url("img/profile4.png") no-repeat center;
+	background: url("../img/profile4.png") no-repeat center;
 	background-size: contain;
 	
 }
@@ -101,9 +98,17 @@ color: rgba(255,255,255,0.85);
 	color: aliceblue;
 }
 
-.logReg {
-	display: none;
+.searchResult{
+	padding: 60px 200px 15px 200px;
+	margin-top: 60px;
+	width: 100%;
+	min-height: 800px;
+	height: 100%;
+	background-color:#A890F1;
 }
+
+
+
 
 
 
