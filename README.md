@@ -1,4 +1,4 @@
-Please visit our [Project Website](www.century.dev/) for more information  
+Please visit our Website for more information: www.centuryx.dev    
 **Semester 6 Project**  
 >**Created By**  
 >Huiyu Xie  
