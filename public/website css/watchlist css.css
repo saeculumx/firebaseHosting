@@ -93,7 +93,7 @@ width: 400px;
 .dropdown:hover .dropdown-content{
 	display: block;
 	text-align: center;
-	background-color: #ffffff;
+	background-color: #685EAE;
 	box-shadow: 0 3px #A5A5A5;
 	color: aliceblue;
 }
@@ -105,51 +105,49 @@ width: 400px;
 .allMoviesHead{
 	padding: 50px 50px 15px 50px;
 	margin-top: 60px;
+	width: 100%;
 }
 
-.allMoviesHead button{
-	background: #938de7;
-	margin-left:10px;
-	padding: 10px;
-	border-radius: 5px;
+
+#notLoginAInfo{
+	font-size: 20px;
+	color: black;
+	background-color: #A890F1;
+	padding: 10px 50px;
+	margin-bottom: 0px;
 }
 
 .grid-container {
-  width: 100%;
-  margin-left: 100px;
   display: grid;
   grid-gap: 50px 20px;
   grid-template-columns: repeat(auto-fill, 208px);
+  background-color: #A890F1;
+  padding: 50px;
+	margin-top: 0;
 }
 
+
+
 .grid-item {
-	border-radius: 5px;
-	box-shadow: 10px 5px 5px #9f9f9f;
-	background-color:#cbcbcb1c;
- 	width: 220px;
-	height: 380px;
- 	font-size: 20px;
+  width: 208px;
+	height: 360px;
+  font-size: 20px;
 }
 
 .grid-item:hover {
-  cursor: pointer;
-	opacity: 0.8;
+  opacity: 0.8;
+	cursor: pointer;
 }
 
 .BasicMoviesImg{
-	border-radius: 5px;
 	width: 208px;
 	height: 320px;
-	margin-left: 6px;
-	margin-top: 6px;
 }
 
 .BasicMoviesTitle{
-	font-weight:bold;
-	width: 75%;
+	width: 80%;
 	height: 60px;
-	font-size: 12px;
-	margin-left:10px;
+	font-size: 15px;
 	color: black;
 	padding-top: 2px;
 	float: left;
@@ -161,7 +159,8 @@ width: 400px;
 	height: auto;
 	font-size: 20px;
 	float: right;
-	color: #6c51d5;
+	color: #EEDA3D;
+	
 	padding-top: 2px;
 	vertical-align: top;
 	text-align: center;

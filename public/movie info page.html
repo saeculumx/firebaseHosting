@@ -2,18 +2,13 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Movies</title>
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>movie info</title>
 	<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
-	<style type="text/css">
-	@import url("website css/All movies css.css");
-    </style>
-	
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
-	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link type="text/css" href="./website css/movie info page.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="./website js/movie info page.js"></script>
 	<link rel="icon" href="img/title.ico" type="image/x-icon" />
-	<script type="text/javascript" src="website js/all movies js.js"></script>
 </head>
 
 <body>
@@ -140,29 +135,40 @@
   </div>
 </div>
 	
-	<div class="allMoviesHead">
-	<h1>Enjoy watching movies online</h1>
-		<div>Sort by: 
-			<button id="PopularityBtn">Popularity</button>
-			<button id="LatestBtn">Latest</button>
-			<button id="HighScoreBtn">High Rating</button>
+	
+	
+	<div style="width: 100%; margin-top: 60px;padding: 50px;">
+		<div style="width: 400px; float: left;height: auto;">
+			<div id="div_movie_img"></div>
+		</div>
+		<div style="height: 500px;width: 800px;position: relative;float: left" class="movieInfo">
+			<div style="width: 100%;float: left">
+				<div id="div_movie_title" class="div_string">[Title]</div>
+				<div id="div_movie_rating" class="div_string">[rating]</div>
+			</div>
+			<div style="width: 100%;float: left">
+				<div id="div_movie_year" class="div_string">[year]</div>
+				<div id="div_movie_director" class="div_string">Director : LOADING...</div>
+			</div>
+			<div id="div_movie_actors" class="div_string">Cast : LOADING...</div>
+			
+			<div class="div_string" style="width: 100%;position: absolute;bottom: 0px;padding-bottom: 10px">
+				<button id="button_movie_like"></button>
+				<div id="div_movie_likeNum" class="div_string">[likeNum]</div>
+			</div>
 		</div>
 	</div>
-	<!-- Show all movies -->
-	<div class="grid-container" id="Popularity-container">
-		
 	
+	<div class="commentArea">
+		<div class="sendComment">
+			<img class="profileImg"></img>
+		    <input id="commentContent" type="text" placeholder="Review about the movie?">
+		    <button id="sendCommentBtn">SEND</button>
+		</div>
+	   <div style="width: 100%;float: left;margin-top: 20px;">REVIEWS</div>
+		<div class="showComment">
+			
+		</div>
 	</div>
-	
-	<div class="grid-container" id="Latest-container">
-		
-	
-	</div>
-	
-	<div class="grid-container" id="HighScore-container">
-		
-	
-	</div>
-	
 </body>
 </html>

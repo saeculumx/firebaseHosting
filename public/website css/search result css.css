@@ -110,54 +110,141 @@ width: 400px;
 	width: 100%;
 	min-height: 800px;
 	height: 100%;
-	background-color:#9f9f9f;
+	background-color:#90baf196;
+}
+.directorResult{
+     padding: 60px 200px 15px 200px;
+     width: 100%;
+     height: 100%;
+     min-height: 800px;
+     background-color:#f1da9083;
 }
 .searchType{
 	padding: 60px 200px 15px 200px;
 	margin-top: 60px;
 	width: 100%;
 	height: 100%;
-	background-color:#A890F1;
+	background-color:#a890f196;
 }
+
+
 .peopleImg{
      float: left;
-     height: 300px;
-     width: 200px;
+     height:200px;
+     width: 150px;
      border: #505050 3px solid;
      margin-top: 5px;
      margin-left: 5px;
+     margin-bottom: 5px;
      border-radius: 5px;
 }
 .moviePosterImg{
      float: left;
-     height: 300px;
-     width: 200px;
+     height:200px;
+     width: 150px;
      border: #505050 3px solid;
      margin-top: 5px;
      margin-left: 5px;
+     margin-bottom: 5px;
      border-radius: 5px;
 }
 .starContainer{
-     height: 310px;
+     height: 220px;
      width: 85%;
      align-items: center;
-     border: #f9f9f9 1px solid;
+     border: #f9f9f9 2px solid;
      border-radius: 5px;
      margin-top: 20px;
 }
+
+.starContainer:hover{
+     opacity: 0.8;
+	 cursor: pointer;
+}
+
+
 .movieContainer{
-     height: 310px;
+     height: 220px;
      width: 85%;
      align-items: center;
-     border: #f9f9f9 1px solid;
+     border: #f9f9f9 2px solid;
      border-radius: 5px;
      margin-top: 20px;
 }
+
+.movieContainer:hover{
+     opacity: 0.8;
+	cursor: pointer;
+}
+
 .inboxtext{
-     text-align: center;
+     width: 80%;
      margin-left: 20px;
+	float: left;
+}
+
+.inboxtext a{
+    font-size: 30px;
+	width: auto;
+	float: left;
+}
+
+.inboxtext Label{
+    font-size: 38px;
+	color: #EEDA3D;
+	margin-left: 40px;
+	float: left; 
+	width: 20px;
+	height: inherit;
+}
+
+.inboxtext p{
+     font-size: 30px;
+	width: auto;
+     margin-left: 220px;
+     color: #685EAE;
+}
+
+.dirContainer{
+     height: 220px;
+     width: 85%;
+     align-items: center;
+     border: #f9f9f9 2px solid;
+     border-radius: 5px;
+     margin-top: 20px;
+}
+
+.dirContainer:hover{
+     opacity: 0.8;
+	cursor: pointer;
 }
 
 
-
-
+.DragBoxContainer{
+     background-color: #6c6bdd94;
+     border: none;
+     color: white;
+     padding: 20px 20px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+	border-radius:5px;
+}
+.sortBtn{
+     background-color: #6c6bdd94;
+     border: none;
+     color: white;
+     padding: 20px 20px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+	border-radius:5px;
+}
+.DragBox{
+     border: none;
+     color: #0000007d;
+     font-size: 16px;
+     background-color: #ffffff00;
+}

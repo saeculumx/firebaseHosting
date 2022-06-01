@@ -1,3 +1,5 @@
+@charset "utf-8";
+/* CSS Document */
 .searchForm {
      position: relative;
      width: 300px;
@@ -93,7 +95,7 @@ width: 400px;
 .dropdown:hover .dropdown-content{
 	display: block;
 	text-align: center;
-	background-color: #ffffff;
+	background-color: #685EAE;
 	box-shadow: 0 3px #A5A5A5;
 	color: aliceblue;
 }
@@ -102,38 +104,76 @@ width: 400px;
 	display: none;
 }
 
-.allMoviesHead{
-	padding: 50px 50px 15px 50px;
-	margin-top: 60px;
+
+
+#div_person_img{
+	height: 500px;
+	width: 90%;
+	background: #BBBBBB;
+	margin: 0 auto;
+	background-image: url("../img/profile.png");
+	background-size:100% 100%;
+	float: left;
 }
 
-.allMoviesHead button{
-	background: #938de7;
-	margin-left:10px;
-	padding: 10px;
-	border-radius: 5px;
+.movieInfo{
+	padding-left: 5px;
+	float: right;
+}
+
+#div_person_name{
+	font-size: 40px;
+	width: auto;
+	float: left;
+}
+
+#div_person_birth{
+	font-size: 38px;
+	color: #9B9B9B;
+	margin-left: 40px;
+	float: left; 
+	width: auto;
+	height: inherit;
+}
+
+#div_person_like{
+	float: left;
+	font-size: 20px;
+	margin-top: 5px;
+}
+
+#div_person_rate{
+	font-size: 20px;
+	margin-top: 5px;
+	margin-left: 50px;
+	float: left;
 }
 
 .grid-container {
-  width: 100%;
-  margin-left: 100px;
   display: grid;
-  grid-gap: 50px 20px;
+  grid-gap: 50px 40px;
   grid-template-columns: repeat(auto-fill, 208px);
+  padding: 50px;
+  width: 100%;
 }
+  .grid-item {
+	  border-radius: 5px;
+	  box-shadow: 10px 5px 5px #9f9f9f;
+	  background-color:#cbcbcb1c;
+	  width: 220px;
+	  height: 380px;
+	   font-size: 20px;
+  }
+  
+  .grid-item:hover {
+	cursor: pointer;
+	  opacity: 0.8;
+  }
 
-.grid-item {
-	border-radius: 5px;
-	box-shadow: 10px 5px 5px #9f9f9f;
-	background-color:#cbcbcb1c;
- 	width: 220px;
-	height: 380px;
- 	font-size: 20px;
-}
-
-.grid-item:hover {
-  cursor: pointer;
-	opacity: 0.8;
+.BasicMoviesImg{
+	background-color: #9f9f9f;
+	width: 208px;
+	height: 320px;
 }
 
 .BasicMoviesImg{
@@ -148,7 +188,7 @@ width: 400px;
 	font-weight:bold;
 	width: 75%;
 	height: 60px;
-	font-size: 12px;
+	font-size: 15px;
 	margin-left:10px;
 	color: black;
 	padding-top: 2px;
@@ -166,6 +206,4 @@ width: 400px;
 	vertical-align: top;
 	text-align: center;
 }
-
-
 
